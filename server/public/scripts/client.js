@@ -23,6 +23,32 @@ function onReady(){
       console.log(error);
     })
   }
+//update songs
+  function updateSongRating(id, newRating){
+    $.ajax({
+      type:'PUT',
+      url: `/songs/${id}`,
+      data: {rating: newRating}
+    })
+    .done(function(response){
+
+    })
+  
+
+
+// deleting the song
+    function deleteSong(id){
+      $.ajax({
+        type: 'DELETE',
+        url: `songs/${id}`,
+      })
+      .done(function(response){
+      })
+      .fail(function(error){
+      })
+    }
+  
+  }
 
 
 }
